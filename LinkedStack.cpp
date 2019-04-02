@@ -59,7 +59,7 @@ public:
 
     }
 
-    void pop(){
+    int pop(){
 
         // * hold the top with a tmp ptr to delete it with
         Node* tmp = this->top_ptr;
@@ -67,8 +67,13 @@ public:
         // * update the top ptr to the next node
         this->top_ptr = this->top_ptr->next_ptr;
 
+        int x  = tmp->data;
+
         // * delete the tmp ptr
         delete tmp;
+
+        return x;
+
 
     }
 
